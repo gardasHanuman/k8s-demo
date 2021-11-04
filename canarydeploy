@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+Kind : deployment
+metadata :
+name: deploy1
+labels:
+app: app-v1
+spec:
+replicas: 2
+selector:
+matcLabels:
+app: app-v1
+template:
+metadata:
+labels:
+app: app-v1
+zone: prod
+spec:
+containers:
+- name: sample-ctr
+image: 23gardasvinay116/hanuman:9
+ports:
+- containerport: 80
